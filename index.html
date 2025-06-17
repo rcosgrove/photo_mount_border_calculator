@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../0-Common/dice_rollers_common.css"> -->
+    <!-- <link rel="stylesheet" href="../0-Common/tabbed_interface.css"> -->
+    <link rel="stylesheet" href="mount_border_calc.css">
+
+    <!-- JAVASCRIPT -->
+    <!-- <script src="../0-Common/dice_rollers_common.js" type="text/javascript" defer></script> -->
+    <!-- <script src="../0-Common/tabbed_interface.js" type="text/javascript" defer></script> -->
+    <script src="../../0-Common/utilities.js" type="text/javascript" defer></script>
+    <script src="mount_border_calc.js" type="text/javascript" defer></script>
+
+    <title>Photo frame mount board calculator v0.1</title>
+</head>
+
+<body class="" id="">
+
+    <section id="sitetitle">
+        <h1>Photo frame mount board calculator</h1>
+        <h2>Version 0.1</h2>
+    </section>
+
+    <section id="mountBoard" class="">
+        <h3>Mount board size</h3>
+        <!-- Set size of mount board -->
+        <div id="mountBoardSizeInputDiv">
+            <p>Horizontal: <input type="number" maxlength="2" id="getUnitsBoardHorizontal" min="1" max="100" value=30></p>
+            <p>Vertical: <input type="number" maxlength="2" id="getUnitsBoardVertical" min="1" max="100" value=40></p>
+        </div>
+        <div class="" id="mountBoardUnitsDiv">
+            <!-- centimeters checked by default -->
+            <label><input type="radio" id="cmBoard" value="cm" name="unitsBoard" checked onClick="getBoardUnits(this.id)">Centimeters</label>
+            <label><input type="radio" id="inBoard" value="in" name="unitsBoard" onClick="getBoardUnits(this.id)">Inches</label>
+        </div>
+    </section>
+
+    <section id="media" class="">
+        <h3>Media size</h3>
+        <!-- Set size of media to be mounted -->
+        <div id="mediaSizeInputDiv">
+            <p>Horizontal: <input type="number" maxlength="2" id="mediaSizeHorizontal" min="1" max="100" value=8></p>
+            <p>Vertical: <input type="number" maxlength="2" id="mediaSizeVertical" min="1" max="100" value=10></p>
+        </div>
+        <div class="" id="mediaUnitsDiv">
+            <!-- centimeters checked by default -->
+            <label><input type="radio" id="cmMedia" value="cm" name="unitsMedia" onClick="getMediaUnits(this.id)" checked>Centimeters</label>
+            <label><input type="radio" id="inMedia" value="in" name="unitsMedia" checked onClick="getMediaUnits(this.id)">Inches</label>
+        </div>
+    </section>
+
+    <section class="" id="calculate">
+        <p><button type="button" id="runCalculator" onclick="calculateMountBoard()"><span class="" id="" value="">Calculate</span></button></p>
+    </section>
+
+    <section class="" id="">
+        <h3>Results</h3>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-iks7"></th>
+                    <th class="tg-iks7"><span id="borderTop"></span></th>
+                    <th class="tg-iks7"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-iks7"><span id="borderLeft"></span></td>
+                    <td class="tg-iks7"><img src="Image_Icon.png" alt="Image icon" width="128" height="128"><br></td>
+                    <td class="tg-iks7"><span id="borderRight"></span></td>
+                </tr>
+                <tr>
+                    <td class="tg-iks7"></td>
+                    <td class="tg-iks7"><span id="borderBottom"></span></td>
+                    <td class="tg-iks7"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section id="footer">
+        <p>This website by Richard Cosgrove © 2025.
+    </section>
+
+</body>
+
+</html>
