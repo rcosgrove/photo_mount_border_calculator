@@ -1,13 +1,24 @@
 /* PHOTO FRAME MOUNT BOARD CALCULATOR JAVASCRIPT */
-/* Version 0.1 */
+/* Version 0.3 */
+
+// v0.3 2025-06-22
+
+// v0.2 2025-06-22
+// 1. Changed calculateMountBoard() to convert centimetres and inches user input to millimeters.
+// 2. Changed "Horizontal" to "Width" and "Vertical" to "Height" in HTML and JS.
+// 3. Added variables to display distance to cut window from left and top edges of mount board.
+// 4. Added function to reset variables to default after calculation run.
+// Gemini checked code showing error in some functions, which were corrected.
+
 
 // VARIABLES
-var boardUnits = "cm";
-var mediaUnits = "in";
-var boardHorizontal = 40; // user entered number
-var boardVertical = 30; // user entered number
-var mediaHorizontal = 10; // user entered number
-var mediaVertical = 8; // user entered number
+var boardUnits;
+var mediaUnits;
+var unitSelected;
+var boardHeight; // user entered number
+var boardWidth; // user entered number
+var mediaHeight; // user entered number
+var mediaWidth; // user entered number
 var borderTop = 0;
 var borderBottom = 0;
 var borderLeft = 0;
@@ -16,85 +27,135 @@ var borderTopAndBottom = 0;
 var borderLeftAndRight = 0;
 
 window.onload = (event) => {
-  console.log("---JAVASCRIPT LOADED---");
+    console.log("---JAVASCRIPT LOADED---");
 };
 
 // FUNCTIONS
 
 function getUnitValue(inputID) {
     // GET VALUE FROM SPAN WITH MATCHING ID AND ADD TO VARIABLE
-    // Set rankSelected var to user rankSelected
+    // Set unitSelected var to user unitSelected
 
-    // console.log("---RUNNING getPowerRank(inputID)---");
+    unitSelected = document.getElementById(inputID).value;
 
-    // console.log("input ID: " + inputID + " is a " + typeof(inputID));
-
-    rankSelected = document.getElementById(inputID).value;
-
-    // // console.log("rankSelected: " + rankSelected + " is a " + typeof(rankSelected));
+    // console.log("unitSelected: " + unitSelected + " is a " + typeof(unitSelected));
 }
 
-function getUnitsBoardHorizontal() {
-    boardHorizontal = document.getElementById(mountBoardSizeHorizontal).value;
-	console.log("RUNNING: getUnitsBoardHorizontal");
-	console.log("boardHorizontal: " + boardHorizontal);
+function getUnitsBoardWidth() {
+    boardWidth = document.getElementById("boardWidthEntry").value;
+    console.log("RUNNING: getUnitsBoardWidth");
+    console.log("boardWidth: " + boardWidth);
 }
 
-function getUnitsBoardVertical() {
-    boardVertical = document.getElementById(mountBoardSizeVertical).value;
-	console.log("RUNNING: getUnitsBoardVertical");
-	console.log("boardVertical: " + boardVertical);
+function getUnitsBoardHeight() {
+    boardHeight = document.getElementById("boardHeightEntry").value;
+    console.log("RUNNING: getUnitsBoardHeight");
+    console.log("boardHeight: " + boardHeight);
 }
 
-function getUnitsMediaHorizontal() {
-    mediaHorizontal = document.getElementById(mediaSizeHorizontal).value;
-	console.log("RUNNING: getUnitsMediaHorizontal");
-	console.log("mediaHorizontal: " + mediaHorizontal);
+function getUnitsMediaWidth() {
+    mediaWidth = document.getElementById("mediaWidthEntry").value;
+    console.log("RUNNING: getUnitsMediaWidth");
+    console.log("mediaWidth: " + mediaWidth);
 }
 
-function getUnitsMediaVertical() {
-    mediaVertical = document.getElementById(mediaSizeVertical).value;
-	console.log("RUNNING: getUnitsMediaVertical");
-	console.log("mediaVertical: " + mediaVertical);
+function getUnitsMediaHeight() {
+    mediaHeight = document.getElementById("mediaHeightEntry").value;
+    console.log("RUNNING: getUnitsMediaHeight");
+    console.log("mediaHeight: " + mediaHeight);
 }
 
 function getBoardUnits(inputID) {
     boardUnits = document.getElementById(inputID).value;
-	console.log("RUNNING: getBoardUnits");
-	console.log("boardUnits: " + boardUnits);
+    console.log("RUNNING: getBoardUnits");
+    console.log("boardUnits: " + boardUnits);
 }
 
 function getMediaUnits(inputID) {
     mediaUnits = document.getElementById(inputID).value;
-	console.log("RUNNING: getMediaUnits");
-	console.log("mediaUnits: " + mediaUnits);
+    console.log("RUNNING: getMediaUnits");
+    console.log("mediaUnits: " + mediaUnits);
 }
 
 function calculateMountBoard(inputID) {
-	console.log("RUNNING: calculateMountBoard");
+    console.log("RUNNING: calculateMountBoard");
+
+    getUnitsBoardWidth();
+    getUnitsBoardHeight();
+    getUnitsMediaWidth();
+    getUnitsMediaHeight();
 
     if (mediaUnits == "in") {
-	console.log("Converting media units to metric");
- 	console.log("Imperial mediaHorizontal:" + mediaHorizontal);
- 	console.log("Imperial mediaVertical:" + mediaVertical);
-        mediaHorizontal = Number(mediaHorizontal) * 2.54;
-        mediaVertical = Number(mediaVertical) * 2.54;
- 	console.log("Metric mediaHorizontal:" + mediaHorizontal);
- 	console.log("Metric mediaVertical:" + mediaVertical);
+        console.log("--- Converting imperial media units to millimetres ---");
+        console.log("Imperial mediaWidth:" + mediaWidth + "in");
+        console.log("Imperial mediaHeight:" + mediaHeight + "in");
+        mediaWidth = Number(mediaWidth) * 25.4;
+        mediaHeight = Number(mediaHeight) * 25.4;
+        console.log("Metric mediaWidth:" + mediaWidth + "mm");
+        console.log("Metric mediaHeight:" + mediaHeight + "mm");
+    } else if (mediaUnits == "cm") {
+        console.log("---Converting centimeters media units to millimetres--");
+        console.log("Imperial mediaWidth:" + mediaWidth + "cm");
+        console.log("Imperial mediaHeight:" + mediaHeight + "cm");
+        mediaWidth = Number(mediaWidth) * 10;
+        mediaHeight = Number(mediaHeight) * 10;
+        console.log("Metric mediaWidth:" + mediaWidth + "cm");
+        console.log("Metric mediaHeight:" + mediaHeight) + "cm";
     }
 
-    borderTopAndBottom = ((Number(boardHorizontal) - Number(mediaHorizontal)) / 2) * 10;
-    borderTopAndBottom = borderTopAndBottom.toFixed(0) + "mm";
+    // Calculate size of frame borders for displaying in millimeters
 
-    borderLeftAndRight = ((Number(boardVertical) - Number(mediaVertical)) / 2) * 10;
-    borderLeftAndRight = borderLeftAndRight.toFixed(0) + "mm";
+    borderTop = ((Number(boardHeight) - Number(mediaHeight)) / 2);
+    windowTopEdge = borderTop.toFixed(0) + "mm";
 
-	console.log("borderTopAndBottom: " + borderTopAndBottom);
-	console.log("borderLeftAndRight: " + borderLeftAndRight);
+    borderBottom = Number(boardHeight) - Number(borderTop);
+    windowBottomEdge = borderBottom.toFixed(0) + "mm";
 
-    document.getElementById("borderTop").innerHTML = borderTopAndBottom;
-    document.getElementById("borderBottom").innerHTML = borderTopAndBottom;
-    document.getElementById("borderLeft").innerHTML = borderLeftAndRight;
-    document.getElementById("borderRight").innerHTML = borderLeftAndRight;
+    borderLeft = ((Number(boardWidth) - Number(mediaWidth)) / 2);
+    windowLeftEdge = borderLeft.toFixed(0) + "mm";
 
+    borderRight = Number(boardWidth) - Number(borderLeft);
+    windowRightEdge = borderRight.toFixed(0) + "mm";
+
+    console.log("borderTop: " + borderTop);
+    console.log("windowTopEdge: " + windowTopEdge);
+    console.log("borderBottom: " + borderBottom);
+    console.log("windowBottomEdge: " + windowBottomEdge);
+    console.log("borderLeft: " + borderLeft);
+    console.log("windowLeftEdge: " + windowLeftEdge);
+    console.log("borderRight: " + borderLeft);
+    console.log("windowRightEdge: " + windowLeftEdge);
+
+    document.getElementById("borderTop").innerHTML = borderTop.toFixed(0) + "mm";
+    document.getElementById("windowTopEdge").innerHTML = windowTopEdge;
+
+    document.getElementById("borderBottom").innerHTML = borderTop.toFixed(0) + "mm";
+    document.getElementById("windowBottomEdge").innerHTML = windowBottomEdge;
+
+    document.getElementById("borderLeft").innerHTML = borderLeft.toFixed(0) + "mm";
+    document.getElementById("windowLeftEdge").innerHTML = windowLeftEdge;
+
+    document.getElementById("borderRight").innerHTML = borderLeft.toFixed(0) + "mm";
+    document.getElementById("windowRightEdge").innerHTML = windowRightEdge;
+
+    resetVariables();
+
+}
+
+function resetVariables() {
+    boardUnits = "mm";
+    mediaUnits = "in";
+    unitSelected = "mm";
+    boardWidth = 400; // user entered number
+    boardHeight = 300; // user entered number
+    mediaWidth = 10; // user entered number
+    mediaHeight = 8; // user entered number
+    borderTop = 0;
+    borderBottom = 0;
+    borderLeft = 0;
+    borderRight = 0;
+    windowTopEdge = 0;
+    windowBottomEdge = 0;
+    windowLeftEdge = 0;
+    windowRightEdge = 0;
 }

@@ -20,26 +20,35 @@
     <script src="../../0-Common/utilities.js" type="text/javascript" defer></script>
     <script src="mount_border_calc.js" type="text/javascript" defer></script>
 
-    <title>Photo frame mount board calculator v0.1</title>
+    <title>Photo frame mount board calculator v0.2</title>
+
+    <!-- v0.3 Gemini checked -->
+
+    <!-- v0.2 2025-06-22 -->
+    <!-- 1. Changed "Horizontal" to "Width" and "Vertical" to "Height" in HTML and JS. -->
+    <!-- 2. Added "millimeters" option to units radio buttons "Horizontal". -->
+    <!-- 3. Set default media size to 10(w) x 8(h) inches -->
+    
 </head>
 
 <body class="" id="">
 
     <section id="sitetitle">
         <h1>Photo frame mount board calculator</h1>
-        <h2>Version 0.1</h2>
+        <h2>Version 0.2</h2>
     </section>
 
     <section id="mountBoard" class="">
         <h3>Mount board size</h3>
         <!-- Set size of mount board -->
         <div id="mountBoardSizeInputDiv">
-            <p>Horizontal: <input type="number" maxlength="2" id="getUnitsBoardHorizontal" min="1" max="100" value=30></p>
-            <p>Vertical: <input type="number" maxlength="2" id="getUnitsBoardVertical" min="1" max="100" value=40></p>
+            <p>Width: <input type="number" maxlength="3" id="boardWidthEntry" min="1" max="1000" value="400"></p>
+            <p>Height: <input type="number" maxlength="3" id="boardHeightEntry" min="1" max="1000" value="300"></p>
         </div>
         <div class="" id="mountBoardUnitsDiv">
-            <!-- centimeters checked by default -->
-            <label><input type="radio" id="cmBoard" value="cm" name="unitsBoard" checked onClick="getBoardUnits(this.id)">Centimeters</label>
+            <!-- Millimeters checked by default -->
+            <label><input type="radio" id="mmBoard" value="mm" name="unitsBoard" checked onClick="getBoardUnits(this.id)">Millimeters</label>
+            <label><input type="radio" id="cmBoard" value="cm" name="unitsBoard" onClick="getBoardUnits(this.id)">Centimeters</label>
             <label><input type="radio" id="inBoard" value="in" name="unitsBoard" onClick="getBoardUnits(this.id)">Inches</label>
         </div>
     </section>
@@ -48,11 +57,12 @@
         <h3>Media size</h3>
         <!-- Set size of media to be mounted -->
         <div id="mediaSizeInputDiv">
-            <p>Horizontal: <input type="number" maxlength="2" id="mediaSizeHorizontal" min="1" max="100" value=8></p>
-            <p>Vertical: <input type="number" maxlength="2" id="mediaSizeVertical" min="1" max="100" value=10></p>
+            <p>Width: <input type="number" maxlength="3" id="mediaWidthEntry" min="1" max="1000" value="10"></p>
+            <p>Height: <input type="number" maxlength="3" id="mediaHeightEntry" min="1" max="1000" value="8"></p>
         </div>
         <div class="" id="mediaUnitsDiv">
-            <!-- centimeters checked by default -->
+            <!-- inches checked by default -->
+            <label><input type="radio" id="mmMedia" value="mm" name="unitsMedia" onClick="getMediaUnits(this.id)">Millimeters</label>
             <label><input type="radio" id="cmMedia" value="cm" name="unitsMedia" onClick="getMediaUnits(this.id)" checked>Centimeters</label>
             <label><input type="radio" id="inMedia" value="in" name="unitsMedia" checked onClick="getMediaUnits(this.id)">Inches</label>
         </div>
@@ -65,23 +75,21 @@
     <section class="" id="">
         <h3>Results</h3>
         <table class="tg">
-            <thead>
-                <tr>
-                    <th class="tg-iks7"></th>
-                    <th class="tg-iks7"><span id="borderTop"></span></th>
-                    <th class="tg-iks7"></th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
-                    <td class="tg-iks7"><span id="borderLeft"></span></td>
-                    <td class="tg-iks7"><img src="Image_Icon.png" alt="Image icon" width="128" height="128"><br></td>
-                    <td class="tg-iks7"><span id="borderRight"></span></td>
+                    <th class="tableCell"></td>
+                    <th class="tableCell"><p><span id="borderTop"></span><br>(cut <span id="windowTopEdge"></span><br>from board's top edge)</p></td>
+                    <th class="tg-iks7 tableCell"></td>
                 </tr>
                 <tr>
-                    <td class="tg-iks7"></td>
-                    <td class="tg-iks7"><span id="borderBottom"></span></td>
-                    <td class="tg-iks7"></td>
+                    <td class="tableCell"><p><span id="borderLeft"></span><br>(cut <span id="windowLeftEdge"></span><br>from board's left edge)</p></td>
+                    <td class="tableCell"><img src="Image_Icon.png" alt="Image icon" width="128" height="128"><br></td>
+                    <td class="tableCell"><p><span id="borderRight"></span><br>(cut <span id="windowRightEdge"></span><br>from board's left edge)</p></td>
+                </tr>
+                <tr>
+                    <td class="tableCell"></td>
+                    <td class="tableCell"><p><span id="borderBottom"></span><br>(cut <span id="windowBottomEdge"></span><br>from board's top edge)</p></td>
+                    <td class="tableCell"></td>
                 </tr>
             </tbody>
         </table>
