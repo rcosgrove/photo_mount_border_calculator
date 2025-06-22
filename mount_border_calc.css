@@ -1,10 +1,6 @@
 /* PHOTO FRAME MOUNT BOARD CALCULATOR CSS */
 /* Version 0.1 */
 
-.example {
-    font-family: "cc-whatchamacallit-variable", sans-serif;
-    font-variation-settings: 'wght'400, 'wdth'50, 'ital'0;
-}
 
 html {
     max-width: 600px;
@@ -18,6 +14,19 @@ h3 {
     font-style: normal;
 }
 
+label {
+    margin-right: 2px;
+}
+
+input {
+    font-size: 1.1em;
+    /*margin-right: 10px;*/
+}
+
+button {
+    font-size: 1.1em;
+    background-color: lightgrey;
+}
 
 /* TABLE */
 .tg {
@@ -60,72 +69,23 @@ h3 {
     min-height: 120px;
 }
 
-.oswald-Results {
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 2.5em;
-    font-style: normal;
+.container-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-#gridLayoutMSH {
-    display: grid;
-    grid-template-rows: repeat(9, auto);
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-areas:
-        'header header header header'
-        'powerRank actions diceKarma diceKarma'
-        'powerRank actions diceKarma diceKarma'
-        'powerRank actions results results'
-        'powerRank actions results results'
-        'powerRank actions results results'
-        'powerRank actions results results'
-        'footer footer footer footer';
-    gap: 10px;
+.indent {
+    position: relative;
+    left: 10px;
 }
+
 
 .float_left {
     float: left;
 }
 
 #sitetitle {
-    grid-area: header;
-}
-
-#powerRankSelection {
-    grid-area: powerRank;
-    height: fit-content;
-    font-family: cc-whatchamacallit-variable, sans-serif;
-    font-style: normal;
-    font-variation-settings: "ital"0, "wdth"50, "wght"400;
-}
-
-#actionSelection {
-    grid-area: actions;
-    font-size: 0.9em;
-    height: fit-content;
-    width: 130px;
-    font-family: cc-whatchamacallit-variable, sans-serif;
-    font-style: normal;
-    font-variation-settings: "ital"0, "wdth"50, "wght"400;
-}
-
-#resultActionSelected,
-#resultColor,
-#actionResult,
-#diceRoll {
-    margin: 0 auto;
-    font-size: 2em;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-span#diceRoll {
-    font-family: "Oswald", sans-serif;
-    /*    top: -0.4em;*/
-    -webkit-text-stroke: 2px black;
-    font-size: 4em;
-    position: relative;
-    color: white;
 }
 
 #resultColor,
@@ -136,64 +96,9 @@ span#diceRoll {
     font-size: 4em;
 }
 
-#diceAndKarma {
-    grid-area: diceKarma;
-    display: flex;
-    position: relative;
-    float: right;
-    height: 240px;
-    justify-content: flex-start;
-    align-items: center;
-    width: 250px;
-    font-family: "ccmeanwhile", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-#resultDisplay {
-    grid-area: results;
-    display: flex;
-    float: right;
-    height: 240px;
-    text-align: center;
-    width: 250px;
-
-}
 
 #footer {
     grid-area: footer;
-}
-
-#roll1d100 {
-    margin: auto;
-    width: 150px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    font-size: 150%;
-    font-weight: bold;
-}
-
-#karma {
-    margin: 0 auto;
-}
-
-#karmaEntryField {
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 2em;
-    margin: 0 auto;
-}
-
-#karmaEntryField input {
-    width: 3em;
-    padding: 3px 6px;
-    margin: 2px 0;
-    box-sizing: border-box;
-    font-size: 1em;
-    font-family: "ccmeanwhile", sans-serif;
-    font-weight: 200;
-    font-style: normal;
 }
 
 #diagnostics {

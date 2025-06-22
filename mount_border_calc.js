@@ -2,6 +2,7 @@
 /* Version 0.3 */
 
 // v0.3 2025-06-22
+// Bug hunt in functions
 
 // v0.2 2025-06-22
 // 1. Changed calculateMountBoard() to convert centimetres and inches user input to millimeters.
@@ -12,9 +13,9 @@
 
 
 // VARIABLES
-var boardUnits;
-var mediaUnits;
-var unitSelected;
+var boardUnits = "mm";
+var mediaUnits = "in";
+var unitSelected = "mm";
 var boardHeight; // user entered number
 var boardWidth; // user entered number
 var mediaHeight; // user entered number
@@ -27,7 +28,7 @@ var borderTopAndBottom = 0;
 var borderLeftAndRight = 0;
 
 window.onload = (event) => {
-    console.log("---JAVASCRIPT LOADED---");
+    // console.log("---JAVASCRIPT LOADED---");
 };
 
 // FUNCTIONS
@@ -38,71 +39,81 @@ function getUnitValue(inputID) {
 
     unitSelected = document.getElementById(inputID).value;
 
-    // console.log("unitSelected: " + unitSelected + " is a " + typeof(unitSelected));
+    // // console.log("unitSelected: " + unitSelected + " is a " + typeof(unitSelected));
 }
 
 function getUnitsBoardWidth() {
+// 2025-06-22 WORKING
     boardWidth = document.getElementById("boardWidthEntry").value;
-    console.log("RUNNING: getUnitsBoardWidth");
-    console.log("boardWidth: " + boardWidth);
+    // console.log("RUNNING: getUnitsBoardWidth");
+    // console.log("boardWidth: " + boardWidth);
 }
 
 function getUnitsBoardHeight() {
+// 2025-06-22 WORKING
     boardHeight = document.getElementById("boardHeightEntry").value;
-    console.log("RUNNING: getUnitsBoardHeight");
-    console.log("boardHeight: " + boardHeight);
+    // console.log("RUNNING: getUnitsBoardHeight");
+    // console.log("boardHeight: " + boardHeight);
+}
+
+function runTestFunction() {
+    // console.log("RUNNING: runTestFunction");
+    getBoardUnits();
+    document.getElementById("testOutput").innerHTML = boardUnits;
 }
 
 function getUnitsMediaWidth() {
+// 2025-06-22 WORKING
     mediaWidth = document.getElementById("mediaWidthEntry").value;
-    console.log("RUNNING: getUnitsMediaWidth");
-    console.log("mediaWidth: " + mediaWidth);
+    // console.log("RUNNING: getUnitsMediaWidth");
+    // console.log("mediaWidth: " + mediaWidth);
 }
 
 function getUnitsMediaHeight() {
+// 2025-06-22 WORKING
     mediaHeight = document.getElementById("mediaHeightEntry").value;
-    console.log("RUNNING: getUnitsMediaHeight");
-    console.log("mediaHeight: " + mediaHeight);
+    // console.log("RUNNING: getUnitsMediaHeight");
+    // console.log("mediaHeight: " + mediaHeight);
 }
 
 function getBoardUnits(inputID) {
+// 2025-06-22 WORKING
     boardUnits = document.getElementById(inputID).value;
-    console.log("RUNNING: getBoardUnits");
-    console.log("boardUnits: " + boardUnits);
+    // console.log("RUNNING: getBoardUnits");
+    // console.log("boardUnits: " + boardUnits);
 }
 
 function getMediaUnits(inputID) {
+// 2025-06-22 WORKING
     mediaUnits = document.getElementById(inputID).value;
-    console.log("RUNNING: getMediaUnits");
-    console.log("mediaUnits: " + mediaUnits);
+    // console.log("RUNNING: getMediaUnits");
+    // console.log("mediaUnits: " + mediaUnits);
 }
 
 function calculateMountBoard(inputID) {
-    console.log("RUNNING: calculateMountBoard");
+    // console.log("RUNNING: calculateMountBoard");
 
-    getBoardUnits();
-    getMediaUnits();
     getUnitsBoardWidth();
     getUnitsBoardHeight();
     getUnitsMediaWidth();
     getUnitsMediaHeight();
 
     if (mediaUnits == "in") {
-        console.log("--- Converting imperial media units to millimetres ---");
-        console.log("Imperial mediaWidth:" + mediaWidth + "in");
-        console.log("Imperial mediaHeight:" + mediaHeight + "in");
+        // console.log("--- Converting imperial media units to millimetres ---");
+        // console.log("Imperial mediaWidth:" + mediaWidth + "in");
+        // console.log("Imperial mediaHeight:" + mediaHeight + "in");
         mediaWidth = Number(mediaWidth) * 25.4;
         mediaHeight = Number(mediaHeight) * 25.4;
-        console.log("Metric mediaWidth:" + mediaWidth + "mm");
-        console.log("Metric mediaHeight:" + mediaHeight + "mm");
+        // console.log("Metric mediaWidth:" + mediaWidth + "mm");
+        // console.log("Metric mediaHeight:" + mediaHeight + "mm");
     } else if (mediaUnits == "cm") {
-        console.log("---Converting centimeters media units to millimetres--");
-        console.log("Imperial mediaWidth:" + mediaWidth + "cm");
-        console.log("Imperial mediaHeight:" + mediaHeight + "cm");
+        // console.log("---Converting centimeters media units to millimetres--");
+        // console.log("Imperial mediaWidth:" + mediaWidth + "cm");
+        // console.log("Imperial mediaHeight:" + mediaHeight + "cm");
         mediaWidth = Number(mediaWidth) * 10;
         mediaHeight = Number(mediaHeight) * 10;
-        console.log("Metric mediaWidth:" + mediaWidth + "cm");
-        console.log("Metric mediaHeight:" + mediaHeight) + "cm";
+        // console.log("Metric mediaWidth:" + mediaWidth + "cm");
+        // console.log("Metric mediaHeight:" + mediaHeight) + "cm";
     }
 
     // Calculate size of frame borders for displaying in millimeters
@@ -119,14 +130,14 @@ function calculateMountBoard(inputID) {
     borderRight = Number(boardWidth) - Number(borderLeft);
     windowRightEdge = borderRight.toFixed(0) + "mm";
 
-    console.log("borderTop: " + borderTop);
-    console.log("windowTopEdge: " + windowTopEdge);
-    console.log("borderBottom: " + borderBottom);
-    console.log("windowBottomEdge: " + windowBottomEdge);
-    console.log("borderLeft: " + borderLeft);
-    console.log("windowLeftEdge: " + windowLeftEdge);
-    console.log("borderRight: " + borderLeft);
-    console.log("windowRightEdge: " + windowLeftEdge);
+    // console.log("borderTop: " + borderTop);
+    // console.log("windowTopEdge: " + windowTopEdge);
+    // console.log("borderBottom: " + borderBottom);
+    // console.log("windowBottomEdge: " + windowBottomEdge);
+    // console.log("borderLeft: " + borderLeft);
+    // console.log("windowLeftEdge: " + windowLeftEdge);
+    // console.log("borderRight: " + borderLeft);
+    // console.log("windowRightEdge: " + windowLeftEdge);
 
     document.getElementById("borderTop").innerHTML = borderTop.toFixed(0) + "mm";
     document.getElementById("windowTopEdge").innerHTML = windowTopEdge;
@@ -145,9 +156,17 @@ function calculateMountBoard(inputID) {
 }
 
 function resetVariables() {
-    boardUnits = "mm";
-    mediaUnits = "in";
-    unitSelected = "mm";
+    // boardUnits = "mm";
+    // mediaUnits = "in";
+    // unitSelected = "mm";
+    
+    // SET RADIO BUTTONS TO DEFAULTS
+    // set mount board units to millimeters
+    document.getElementById("mmBoard").checked = true;
+    
+    // set mount board units to inches
+    document.getElementById("inMedia").checked = true;
+    
     boardWidth = 0; // user entered number
     boardHeight = 0; // user entered number
     mediaWidth = 0; // user entered number
