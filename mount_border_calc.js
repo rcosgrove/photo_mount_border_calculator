@@ -80,6 +80,8 @@ function getMediaUnits(inputID) {
 function calculateMountBoard(inputID) {
     console.log("RUNNING: calculateMountBoard");
 
+    getBoardUnits();
+    getMediaUnits();
     getUnitsBoardWidth();
     getUnitsBoardHeight();
     getUnitsMediaWidth();
@@ -146,10 +148,10 @@ function resetVariables() {
     boardUnits = "mm";
     mediaUnits = "in";
     unitSelected = "mm";
-    boardWidth = 400; // user entered number
-    boardHeight = 300; // user entered number
-    mediaWidth = 10; // user entered number
-    mediaHeight = 8; // user entered number
+    boardWidth = 0; // user entered number
+    boardHeight = 0; // user entered number
+    mediaWidth = 0; // user entered number
+    mediaHeight = 0; // user entered number
     borderTop = 0;
     borderBottom = 0;
     borderLeft = 0;
