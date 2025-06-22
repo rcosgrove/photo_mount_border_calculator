@@ -10,13 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="../0-Common/dice_rollers_common.css"> -->
-    <!-- <link rel="stylesheet" href="../0-Common/tabbed_interface.css"> -->
     <link rel="stylesheet" href="mount_border_calc.css">
 
     <!-- JAVASCRIPT -->
-    <!-- <script src="../0-Common/dice_rollers_common.js" type="text/javascript" defer></script> -->
-    <!-- <script src="../0-Common/tabbed_interface.js" type="text/javascript" defer></script> -->
     <script src="../../0-Common/utilities.js" type="text/javascript" defer></script>
     <script src="mount_border_calc.js" type="text/javascript" defer></script>
 
@@ -27,8 +23,7 @@
     <!-- v0.2 2025-06-22 -->
     <!-- 1. Changed "Horizontal" to "Width" and "Vertical" to "Height" in HTML and JS. -->
     <!-- 2. Added "millimeters" option to units radio buttons "Horizontal". -->
-    <!-- 3. Set default media size to 10(w) x 8(h) inches -->
-
+    <!-- 3. Set default media size to 10(w) x 8(h) inches and default board size to 400(w) x 300(h) millimeters -->
 </head>
 
 <body class="" id="">
@@ -82,19 +77,21 @@
         <table class="tg">
             <tbody>
                 <tr>
-                    <th class="tableCell">
-                        </td>
-                    <th class="tableCell">
+                    <td class="tableCell">
+                    </td>
+                    <td class="tableCell">
                         <p><strong><span id="borderTop"></span></strong><br>(cut <strong><span id="windowTopEdge"></span></strong><br>from top edge)</p>
-                        </td>
-                    <th class="tg-iks7 tableCell">
-                        </td>
+                    </td>
+                    <td class="tableCell">
+                    </td>
                 </tr>
                 <tr>
                     <td class="tableCell">
                         <p><strong><span id="borderLeft"></span></strong><br>(cut <strong><span id="windowLeftEdge"></span></strong><br>from left edge)</p>
                     </td>
-                    <td class="tableCell"><img src="Image_Icon.png" alt="Image icon" width="128" height="128"><br></td>
+                    <td class="tableCell">
+                        <img src="Image_Icon.png" alt="Image icon" width="96" height="96">
+                    </td>
                     <td class="tableCell">
                         <p><strong><span id="borderRight"></strong></span><br>(cut <strong><span id="windowRightEdge"></span></strong><br>from left edge)</p>
                     </td>

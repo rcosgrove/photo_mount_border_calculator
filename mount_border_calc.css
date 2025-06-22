@@ -1,6 +1,6 @@
 /* PHOTO FRAME MOUNT BOARD CALCULATOR CSS */
-/* Version 0.1 */
-
+/* Version 0.2 */
+/* Removed CSS code not in use */
 
 html {
     max-width: 600px;
@@ -9,7 +9,6 @@ html {
 
 h2,
 h3 {
-    font-family: "ccmeanwhile", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
@@ -20,7 +19,6 @@ label {
 
 input {
     font-size: 1.1em;
-    /*margin-right: 10px;*/
 }
 
 button {
@@ -28,45 +26,8 @@ button {
     background-color: lightgrey;
 }
 
-/* TABLE */
-.tg {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.tg td {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.tg th {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg .tg-iks7 {
-    background-color: #ffffff;
-    border-color: #000000;
-}
-
-.tableCell {
-    justify-text: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    /*overflow: hidden;*/
-    padding: 10px 5px;
-    /*word-break: normal;*/
-    min-width: 220px;
-    min-height: 120px;
+.float_left {
+    float: left;
 }
 
 .container-row {
@@ -80,27 +41,28 @@ button {
     left: 10px;
 }
 
-
-.float_left {
-    float: left;
+/* TABLE */
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-#sitetitle {
+.tableCell {
+    background-color: #ffffff;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    justify-text: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    /*padding: 10px 5px;*/
+    width: 33%;
+    /*max-height: 380px;*/
 }
 
-#resultColor,
-#actionResult {
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    -webkit-text-stroke: 2px black;
-    font-size: 4em;
-}
+#sitetitle {}
 
+#footer {}
 
-#footer {
-    grid-area: footer;
-}
-
-#diagnostics {
-    grid-area: diagnostics;
-}
+#diagnostics {}
