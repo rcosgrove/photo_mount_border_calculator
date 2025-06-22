@@ -2,8 +2,8 @@
 /* Version 0.1 */
 
 .example {
-  font-family: "cc-whatchamacallit-variable",sans-serif;
-  font-variation-settings: 'wght' 400, 'wdth' 50, 'ital' 0;
+    font-family: "cc-whatchamacallit-variable", sans-serif;
+    font-variation-settings: 'wght'400, 'wdth'50, 'ital'0;
 }
 
 html {
@@ -11,22 +11,54 @@ html {
     font-family: "Open Sans", sans-serif;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: "ccmeanwhile", sans-serif;
-font-weight: 700;
-font-style: normal;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
 /* TABLE */
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-iks7{background-color:#ffffff;border-color:#000000;margin: auto;};
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
 
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-iks7 {
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+.tableCell {
+    justify-text: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    /*overflow: hidden;*/
+    padding: 10px 5px;
+    /*word-break: normal;*/
+    min-width: 220px;
+    min-height: 120px;
+}
 
 .oswald-Results {
     font-family: "Oswald", sans-serif;
@@ -64,7 +96,7 @@ font-style: normal;
     height: fit-content;
     font-family: cc-whatchamacallit-variable, sans-serif;
     font-style: normal;
-    font-variation-settings: "ital" 0, "wdth" 50, "wght" 400;
+    font-variation-settings: "ital"0, "wdth"50, "wght"400;
 }
 
 #actionSelection {
@@ -72,9 +104,9 @@ font-style: normal;
     font-size: 0.9em;
     height: fit-content;
     width: 130px;
-        font-family: cc-whatchamacallit-variable, sans-serif;
+    font-family: cc-whatchamacallit-variable, sans-serif;
     font-style: normal;
-    font-variation-settings: "ital" 0, "wdth" 50, "wght" 400;
+    font-variation-settings: "ital"0, "wdth"50, "wght"400;
 }
 
 #resultActionSelected,
@@ -89,7 +121,7 @@ font-style: normal;
 
 span#diceRoll {
     font-family: "Oswald", sans-serif;
-/*    top: -0.4em;*/
+    /*    top: -0.4em;*/
     -webkit-text-stroke: 2px black;
     font-size: 4em;
     position: relative;
@@ -114,8 +146,8 @@ span#diceRoll {
     align-items: center;
     width: 250px;
     font-family: "ccmeanwhile", sans-serif;
-font-weight: 700;
-font-style: normal;
+    font-weight: 700;
+    font-style: normal;
 }
 
 #resultDisplay {
@@ -160,11 +192,10 @@ font-style: normal;
     box-sizing: border-box;
     font-size: 1em;
     font-family: "ccmeanwhile", sans-serif;
-font-weight: 200;
-font-style: normal;
+    font-weight: 200;
+    font-style: normal;
 }
 
 #diagnostics {
     grid-area: diagnostics;
 }
-
