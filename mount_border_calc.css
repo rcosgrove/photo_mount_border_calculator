@@ -1,6 +1,6 @@
 /* PHOTO FRAME MOUNT BOARD CALCULATOR CSS */
 /* Version 0.3 */
-/* 0.3: Viewport code added */
+/* 0.3: Viewport code added; tweaked table style sheets; indented button */
 /* 0.2: Removed CSS code not in use */
 
 @media only screen 
@@ -21,30 +21,34 @@ h3 {
 }
 
 label {
-    margin-right: 2px;
+    margin-right: 0.1em;
 }
 
 input {
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 button {
     font-size: 1.1em;
     background-color: lightgrey;
-}
-
-.float_left {
-    float: left;
+    padding: 0.25em;
+    margin: 0.5em;
 }
 
 .container-row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
     max-height: 1.1em;
+    margin-top: 1em;
+}
 
+
+.center-item {
+}
+
+.float_left {
+    float: left;
 }
 
 .indent {
@@ -52,10 +56,15 @@ button {
     left: 0.1em;
 }
 
+.padding-right {
+    padding-right: 1em;
+}
+
 /* TABLE */
 .tg {
     border-collapse: collapse;
     border-spacing: 0;
+    width: 90%;
 }
 
 .tableCell {
@@ -67,9 +76,18 @@ button {
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    /*padding: 10px 5px;*/
     width: 33%;
-    /*max-height: 380px;*/
+    height: 6em;
+}
+
+#calculate {
+}
+
+#runCalculator {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 20%;
+
 }
 
 #sitetitle {}

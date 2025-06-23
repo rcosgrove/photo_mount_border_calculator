@@ -36,71 +36,71 @@
     <section id="mountBoard" class="">
         <h3>Mount board size</h3>
         <!-- Set size of mount board -->
-        <div class="container-row">
-            <div class="container-row" id="mountBoardSizeInputDiv">
-                <p>Width: <input type="number" maxlength="4" id="boardWidthEntry" min="1" max="1000" value="400"></p>
-                <p class="indent">Height: <input type="number" maxlength="4" id="boardHeightEntry" min="1" max="1000" value="300"></p>
-            </div>
-            <div class="indent" id="mountBoardUnitsDiv">
-                <!-- Millimeters checked by default -->
-                <label class="indent"><input type="radio" id="mmBoard" value="mm" name="unitsBoard" checked onClick="getBoardUnits(this.id)">mm</label>
-                <label class="indent"><input type="radio" id="cmBoard" value="cm" name="unitsBoard" onClick="getBoardUnits(this.id)">cm</label>
-                <label class="indent"><input type="radio" id="inBoard" value="in" name="unitsBoard" onClick="getBoardUnits(this.id)">in</label>
-            </div>
+        <div class="container-row" id="mountBoardSizeInputDiv">
+            <p class="padding-right">Width: <input type="number" maxlength="4" id="boardWidthEntry" min="1" max="1000" value="400"></p>
+            <p>Height: <input type="number" maxlength="4" id="boardHeightEntry" min="1" max="1000" value="300"></p>
+        </div>
+        <div class="padding-right container-row" id="mountBoardUnitsDiv">
+            <!-- Millimeters checked by default -->
+            <p class="padding-right">Units:
+                <label class="padding-right"><input type="radio" id="mmBoard" value="mm" name="unitsBoard" checked onClick="getBoardUnits(this.id)">mm</label>
+                <label class="padding-right"><input type="radio" id="cmBoard" value="cm" name="unitsBoard" onClick="getBoardUnits(this.id)">cm</label>
+                <label class="padding-right"><input type="radio" id="inBoard" value="in" name="unitsBoard" onClick="getBoardUnits(this.id)">in</label>
+            </p>
         </div>
     </section>
 
     <section id="media" class="">
         <h3>Media size</h3>
         <!-- Set size of media to be mounted -->
-        <div class="container-row">
-            <div class="container-row" id="mediaSizeInputDiv">
-                <p>Width: <input type="number" maxlength="4" id="mediaWidthEntry" min="1" max="1000" value="10"></p>
-                <p class="indent">Height: <input type="number" maxlength="4" id="mediaHeightEntry" min="1" max="1000" value="8"></p>
-            </div>
-            <div class="indent" id="mediaUnitsDiv">
-                <!-- inches checked by default -->
-                <label class="indent"><input type="radio" id="mmMedia" value="mm" name="unitsMedia" onClick="getMediaUnits(this.id)">mm</label>
-                <label class="indent"><input type="radio" id="cmMedia" value="cm" name="unitsMedia" onClick="getMediaUnits(this.id)" checked>cm</label>
-                <label class="indent"><input type="radio" id="inMedia" value="in" name="unitsMedia" checked onClick="getMediaUnits(this.id)">in</label>
-            </div>
+        <div class="container-row" id="mediaSizeInputDiv">
+            <p class="padding-right">Width: <input type="number" maxlength="4" id="mediaWidthEntry" min="1" max="1000" value="10"></p>
+            <p>Height: <input type="number" maxlength="4" id="mediaHeightEntry" min="1" max="1000" value="8"></p>
+        </div>
+        <div class="indent" id="mediaUnitsDiv">
+            <!-- inches checked by default -->
+            <p class="padding-right">Units:
+                <label class="padding-right"><input type="radio" id="mmMedia" value="mm" name="unitsMedia" onClick="getMediaUnits(this.id)">mm</label>
+                <label class="padding-right"><input type="radio" id="cmMedia" value="cm" name="unitsMedia" onClick="getMediaUnits(this.id)" checked>cm</label>
+                <label class="padding-right"><input type="radio" id="inMedia" value="in" name="unitsMedia" checked onClick="getMediaUnits(this.id)">in</label>
+            </p>
         </div>
     </section>
 
-    <section class="" id="calculate">
-        <p><button type="button" id="runCalculator" onclick="calculateMountBoard()"><span class="" id="" value="">Calculate</span></button></p>
+    <section class="container-row" id="calculate">
+        <button type="button" id="runCalculator" onclick="calculateMountBoard()"><span class="" id="" value="">Calculate</span></button>
     </section>
 
     </section>
 
     <section class="" id="">
-        <h3>Results</h3>
+        <h3>Window frame measurements</h3>
         <table class="tg">
             <tbody>
                 <tr>
                     <td class="tableCell">
                     </td>
                     <td class="tableCell">
-                        <p><strong><span id="borderTop"></span></strong><br>(cut <strong><span id="windowTopEdge"></span></strong><br>from top edge)</p>
+                        <p><strong><span id="borderTop"></span></strong><br><span id="windowTopEdge"></span></p>
                     </td>
                     <td class="tableCell">
                     </td>
                 </tr>
                 <tr>
                     <td class="tableCell">
-                        <p><strong><span id="borderLeft"></span></strong><br>(cut <strong><span id="windowLeftEdge"></span></strong><br>from left edge)</p>
+                        <p><strong><span id="borderLeft"></span></strong><br><span id="windowLeftEdge"></span></p>
                     </td>
                     <td class="tableCell">
                         <img src="Image_Icon.png" alt="Image icon" width="96" height="96">
                     </td>
                     <td class="tableCell">
-                        <p><strong><span id="borderRight"></strong></span><br>(cut <strong><span id="windowRightEdge"></span></strong><br>from left edge)</p>
+                        <p><strong><span id="borderRight"></strong></span><br><span id="windowRightEdge"></span></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tableCell"></td>
                     <td class="tableCell">
-                        <p><strong><span id="borderBottom"></span></strong><br>(cut <strong><span id="windowBottomEdge"></span></strong><br>from top edge)</p>
+                        <p><strong><span id="borderBottom"></span></strong><br><span id="windowBottomEdge"></span></p>
                     </td>
                     <td class="tableCell"></td>
                 </tr>

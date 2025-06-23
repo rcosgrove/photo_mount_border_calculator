@@ -1,5 +1,7 @@
 /* PHOTO FRAME MOUNT BOARD CALCULATOR JAVASCRIPT */
-/* Version 0.3 */
+/* Version 0.4 */
+
+// v0.4 changed calculateFrameBorderSizes() function to write "Cut xxx from…" text when displaying measurements.
 
 // v0.3 2025-06-22
 // Bug hunt in functions
@@ -96,17 +98,21 @@ function getMediaUnits(inputID) {
 function writeResults() {
     // write frame border sizes in millimeters
 
+    // write result in top window 
     document.getElementById("borderTop").innerHTML = borderTop.toFixed(0) + "mm";
-    document.getElementById("windowTopEdge").innerHTML = windowTopEdge;
+    document.getElementById("windowTopEdge").innerHTML = "(Cut <strong>" + windowTopEdge + "</strong><br>from top edge)";
 
+    // write result in bottom window 
     document.getElementById("borderBottom").innerHTML = borderTop.toFixed(0) + "mm";
-    document.getElementById("windowBottomEdge").innerHTML = windowBottomEdge;
+    document.getElementById("windowBottomEdge").innerHTML = "(Cut <strong>" + windowBottomEdge + "</strong><br>from bottom edge)";
 
+    // write result in left window 
     document.getElementById("borderLeft").innerHTML = borderLeft.toFixed(0) + "mm";
-    document.getElementById("windowLeftEdge").innerHTML = windowLeftEdge;
+    document.getElementById("windowLeftEdge").innerHTML = "(Cut <strong>" + windowLeftEdge + "</strong><br>from left edge)";
 
+    // write result in right window 
     document.getElementById("borderRight").innerHTML = borderLeft.toFixed(0) + "mm";
-    document.getElementById("windowRightEdge").innerHTML = windowRightEdge;
+    document.getElementById("windowRightEdge").innerHTML = "(Cut <strong>" + windowRightEdge + "</strong><br>from right edge)";
 }
 
 function calculateFrameBorderSizes() {
