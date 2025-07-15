@@ -104,7 +104,7 @@ function writeResults() {
 
     // write result in bottom window 
     document.getElementById("borderBottom").innerHTML = borderTop.toFixed(0) + "mm";
-    document.getElementById("windowBottomEdge").innerHTML = "(Cut <strong>" + windowBottomEdge + "</strong><br>from bottom edge)";
+    document.getElementById("windowBottomEdge").innerHTML = "(Cut <strong>" + windowBottomEdge + "</strong><br>from top edge)";
 
     // write result in left window 
     document.getElementById("borderLeft").innerHTML = borderLeft.toFixed(0) + "mm";
@@ -112,7 +112,7 @@ function writeResults() {
 
     // write result in right window 
     document.getElementById("borderRight").innerHTML = borderLeft.toFixed(0) + "mm";
-    document.getElementById("windowRightEdge").innerHTML = "(Cut <strong>" + windowRightEdge + "</strong><br>from right edge)";
+    document.getElementById("windowRightEdge").innerHTML = "(Cut <strong>" + windowRightEdge + "</strong><br>from left edge)";
 }
 
 function calculateFrameBorderSizes() {
